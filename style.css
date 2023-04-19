@@ -9,6 +9,8 @@
     --serif-display :'DM Serif Display', serif;
     --main-font : 'Raleway', sans-serif;
     --bg-color : rgb(248, 246, 246);
+    --heading-font : 4rem;
+    --heading-font-mobile : 3rem;
 }
 
 
@@ -118,7 +120,7 @@ nav ul{
 
 .abt-heading{
     font-family: var(--serif-display);
-    font-size: 4rem;
+    font-size: var(--heading-font);
     line-height: 4rem;
     background-color: var(--bg-color);
     text-align: center;
@@ -148,7 +150,7 @@ nav ul{
 
 .heading{
     font-family: var(--serif-display);
-    font-size: 4rem;
+    font-size: var(--heading-font);
     margin-block: 1rem;
 }
 
@@ -232,7 +234,7 @@ nav div{
 }
 
 .my-name{
-    font-size: 3.5rem;
+    font-size: var(--heading-font);
     letter-spacing: 2px;
     line-height: 3rem;
     padding-block: 1rem;
@@ -304,7 +306,7 @@ nav ul{
 }
 
 .abt-heading{
-    font-size: 3rem;
+    font-size: var(--heading-font-mobile);
     line-height: 4rem;
     height: 15rem;
     width: 15rem;
@@ -315,6 +317,9 @@ nav ul{
     width: 80vw;
 }
 
+.heading{
+    font-size: var(--heading-font-mobile);
+}
 
 .projects{
     grid-template-columns: repeat(1,70vw);
@@ -329,6 +334,10 @@ footer{
     flex-direction: column;
     gap: 1rem;
     padding-block: 2rem;
+}
+
+.foot-heading{
+    font-size: 2rem;
 }
 
  }
