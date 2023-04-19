@@ -8,25 +8,26 @@
 :root{
     --serif-display :'DM Serif Display', serif;
     --main-font : 'Raleway', sans-serif;
+    --bg-color : rgb(248, 246, 246);
 }
 
 
 body{
     font-family: 'Rubik', sans-serif;
-    font-size: 20px;
+    font-size: 25px;
     font-family: var(--main-font);
     font-weight: 300;
 }
 
-
+/*``````````````````````NAVBAR````````````````````````````````*/
 nav{
-    background-color: white;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-block: 2rem;
-    padding: 1rem min(10rem, 10vw);
-    background-color: rgb(248, 246, 246);
+    padding-inline: min(10rem, 10vw);
+    background-color: var(--bg-color);
+    height: 15vh;
+    border-bottom: 1px solid black;
 
 /*     background: linear-gradient(90deg, #e3ffe7 0%, #d9e7ff 100%); */
 }
@@ -34,7 +35,7 @@ nav{
 nav div{
     font-family: var(--serif-display);
     letter-spacing: 2px;
-    font-size: 2.1rem;
+    font-size: 2.5rem;
 }
 
 nav ul{
@@ -43,32 +44,30 @@ nav ul{
     gap: 2vw;  
 }
 
+/*```````````````````````````INTRO```````````````````````````````*/
 .intro{
-    background-color: rgb(248, 246, 246);
+    background-color: var(--bg-color);
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 5vw;
-    position: relative;
+    height: 85vh;
 }
 
-.intro-text{
-    width: 40%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-
+.my-img img{
+    border-bottom: 1px solid black;
 }
 
 .my-name{
     font-family: var(--serif-display);
-    font-size: 4rem;
+    font-size: 5rem;
     letter-spacing: 2px;
-    padding: 0;
+    line-height: 4.2rem;
+    padding-block: 1rem;
 }
 
 .profession{
-    font-size: 1.5rem;
+    font-size: 1.7rem;
     font-weight: 300;
     text-transform: uppercase;
 }
@@ -76,7 +75,7 @@ nav ul{
 .btns{
     display: flex;
     gap: 2%;
-    margin-top: 1.5rem;
+    padding-top: 5vh;
 }
 
 .btns div{
@@ -84,6 +83,7 @@ nav ul{
     border-radius: 0.7rem;
     border: 1px solid black;
     cursor: pointer;
+    text-align: center;
 }
 
 .hire{
@@ -94,8 +94,11 @@ nav ul{
 .social-media{
     display: flex;
     gap: 2rem;
-    position: absolute;
-    bottom: 3rem;
+
+}
+
+.intro .social-media{
+    padding-top: 10vh;
 }
 
 .social-media img{
@@ -103,15 +106,44 @@ nav ul{
     cursor: pointer;
 }
 
+/*````````````````````````ABOUT MEE````````````````````````````*/
+
+.about{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5vw;
+    padding-block: 4rem;
+}
+
+.abt-heading{
+    font-family: var(--serif-display);
+    font-size: 4rem;
+    line-height: 4rem;
+    background-color: var(--bg-color);
+    text-align: center;
+    height: 20rem;
+    width: 20rem;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.abt-text{
+    width: 50%;
+    text-align: right;
+}
+
+/*````````````````````````PROJECTS`````````````````````````````````*/
 .works{
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     text-align: center;
-
- /*    padding: 1rem min(10rem, 10vw); */
-    margin-block: 3rem;
+    background-color: var(--bg-color);
+    padding-block: 3rem;
 }
 
 .heading{
@@ -122,9 +154,8 @@ nav ul{
 
 .projects{
     display:grid;
-    grid-template-rows: repeat(3,auto);
-    grid-template-columns: repeat(3,20vw);
-    grid-gap: max(4rem, 3vw);
+    grid-template-columns: repeat(3, max(22vw,20rem));
+    grid-gap: min(4rem, 3vw);
     padding-block: 1rem;
 }
 
@@ -132,13 +163,17 @@ nav ul{
     background-color: white;
     border-radius: 1rem;
     box-shadow: 0.4em 0.4em .4em  rgba(0, 0, 0, 0.253), -0.3em 0 .4em rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
 }
 
 .project img{
+    width: 100%;
     height: 12rem;
-    width: 20vw;
     border-radius: 1rem 1rem 0 0;
-    border-bottom: 0.5px solid rgb(233, 230, 230);
+    border-bottom: 0.5px solid var(--bg-color);
+    object-fit: cover;
+    overflow-y: hidden
 }
 
 .proj-desc{
@@ -148,15 +183,152 @@ nav ul{
     text-align: left;
     padding: 1rem;
     width: 100%;
-
 }
 
 .proj-desc a{
     text-decoration: none;
-
+    color: black;
+    font-size: 20px;
 }
 
 .proj-desc a img{
     height: 2rem;
     cursor: pointer;
 }
+ /*`````````````````FOOTER````````````````````````*/
+
+ footer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10vw;
+    padding-block: 3rem;
+ }
+
+ .foot-heading{
+    font-family: var(--serif-display);
+    font-size: 2.5rem;
+ }
+
+ /*`````````````````````TABLET DESIGN````````````````````````````*/
+
+ @media only screen and (max-width : 1100px){ 
+.projects{
+    grid-template-columns: repeat(2,max(35vw,17rem));
+    grid-gap: min(3rem, 5vw);
+}
+
+.project img{
+    height: 10rem;
+}
+}
+
+/*```````````````````````````````````````````````````````````````*/
+
+ @media only screen and (max-width : 1100px){ 
+
+nav div{
+    font-size: 2rem;
+}
+
+.my-name{
+    font-size: 3.5rem;
+    letter-spacing: 2px;
+    line-height: 3rem;
+    padding-block: 1rem;
+}
+    
+.btns{
+    flex-direction: column;
+    gap: 0.7rem;
+    justify-content: center;
+    padding-top: 1.5rem;
+}
+
+.btns div{
+    width: 65%;
+}
+
+
+ }
+ /*`````````````````````MOBILE DESIGN````````````````````````````*/
+
+ @media only screen and (max-width : 700px){
+body{
+    font-size: 1.5rem;
+}
+
+nav{
+    padding: 1rem;
+    height: auto;
+}
+
+nav ul{
+    display: none;
+}
+
+.intro{
+    flex-direction: column;
+    height: auto;
+    padding-bottom: 2rem;
+}
+
+.my-img img{
+    width: 70vw;
+}
+
+.intro-text{
+    text-align: center;
+    width: 80vw;
+}
+
+.profession{
+    font-size: 1.3rem;
+}
+
+.btns div{
+    width: 100%;
+}
+
+
+.social-media{
+    justify-content: center;
+}
+
+.intro .social-media{
+    padding-top: 3rem;
+}
+
+.about{
+    flex-direction: column-reverse;
+}
+
+.abt-heading{
+    font-size: 3rem;
+    line-height: 4rem;
+    height: 15rem;
+    width: 15rem;
+}
+
+.abt-text{
+    text-align: center;
+    width: 80vw;
+}
+
+
+.projects{
+    grid-template-columns: repeat(1,70vw);
+    grid-gap: 2rem;
+}
+
+.project img{
+    height: 11rem;
+}
+
+footer{
+    flex-direction: column;
+    gap: 1rem;
+    padding-block: 2rem;
+}
+
+ }
