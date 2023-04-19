@@ -229,12 +229,9 @@ nav ul{
 
  @media only screen and (max-width : 1100px){ 
 
-nav div{
-    font-size: 2rem;
-}
 
 .my-name{
-    font-size: var(--heading-font);
+    font-size: 3.5rem;
     letter-spacing: 2px;
     line-height: 3rem;
     padding-block: 1rem;
@@ -263,6 +260,10 @@ body{
 nav{
     padding: 1rem;
     height: auto;
+}
+
+nav div{
+    font-size: 1.5rem;
 }
 
 nav ul{
@@ -298,7 +299,7 @@ nav ul{
 }
 
 .intro .social-media{
-    padding-top: 3rem;
+    display: none;
 }
 
 .about{
