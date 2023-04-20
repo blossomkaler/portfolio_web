@@ -21,3 +21,39 @@ function shadow(e) {
 }
 
 intro.addEventListener('mousemove', shadow);
+
+/*````````````````````````````````````````````````````````````````````````` */
+
+function debounce(func, wait = 30, immediate = true) {
+    var timeout;
+    return function() {
+      var context = this, args = arguments;
+      var later = function() {
+        timeout = null;
+        if (!immediate) func.apply(context, args);
+      };
+      var callNow = immediate && !timeout;
+      clearTimeout(timeout);
+      timeout = setTimeout(later, wait);
+      if (callNow) func.apply(context, args);
+    };
+  };
+
+  const aboutDiv = document.querySelector('.about');
+  const abtText = document.querySelector('.abt-text');
+
+  function slideText() {
+      const slideInAt = (window.scrollY + window.innerHeight) - aboutDiv.clientHeight / 1.5;
+      
+      // bottom of the image
+      const textBottom = aboutDiv.offsetTop + aboutDiv.clientHeight;
+      const isHalfShown = slideInAt > aboutDiv.offsetTop;
+      const isNotScrolledPast = window.scrollY < textBottom;
+      if (isHalfShown && isNotScrolledPast) {
+        abtText.classList.add('active');
+      } else {
+        abtText.classList.remove('active');
+      }
+  }
+
+  window.addEventListener('scroll', debounce(slideText));

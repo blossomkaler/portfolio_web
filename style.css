@@ -74,8 +74,8 @@ nav ul li a{
 
 }
 
-nav ul li a:hover{
-  text-decoration: underline;
+nav ul li:hover{
+  scale: 1.2;
 
 }
 
@@ -161,17 +161,31 @@ nav ul li a:hover{
     line-height: 4rem;
     background-color: var(--bg-color);
     text-align: center;
-    height: 20rem;
-    width: 20rem;
+    height: 19rem;
+    width: 19rem;
     border-radius: 50%;
     display: flex;
     justify-content: center;
     align-items: center;
+    cursor: pointer;
 }
+
+  .abt-heading:hover {
+    scale: 1.1;
+  }
 
 .abt-text{
     width: 50%;
     text-align: right;
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0s, opacity 5s linear;
+
+}
+
+.abt-text.active{
+     visibility: visible;
+    opacity: 1;
 }
 
 /*````````````````````````PROJECTS`````````````````````````````````*/
@@ -301,6 +315,12 @@ nav{
 
 nav div{
     font-size: 1.5rem;
+    animation: grad-move 0.5s linear infinite;
+    background: linear-gradient(to right, black, var(--gray), var(--light-gray), black);
+    background-size: 200%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    white-space: nowrap;
 }
 
 nav ul{
