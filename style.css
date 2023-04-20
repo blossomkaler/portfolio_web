@@ -11,6 +11,9 @@
     --bg-color : rgb(248, 246, 246);
     --heading-font : 4rem;
     --heading-font-mobile : 3rem;
+
+    --gray: rgb(105, 104, 107);
+    --light-gray: rgb(169, 167, 168);
 }
 
 
@@ -34,16 +37,46 @@ nav{
 /*     background: linear-gradient(90deg, #e3ffe7 0%, #d9e7ff 100%); */
 }
 
+
+@keyframes grad-move {
+    from {
+      background-position: 0% center;
+    }
+    
+    to {
+      background-position: -200% center;
+    }
+}
+
 nav div{
     font-family: var(--serif-display);
     letter-spacing: 2px;
     font-size: 2.5rem;
+  
 }
 
 nav ul{
     display: flex;
     list-style: none;
-    gap: 2vw;  
+    gap: 2vw;
+}
+
+nav ul li a{
+    text-decoration: none;
+    color: black;
+    font-weight: 700;
+    animation: grad-move 0.5s linear infinite;
+    background: linear-gradient(to right, black, var(--gray), var(--light-gray), black);
+    background-size: 200%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    white-space: nowrap;
+
+}
+
+nav ul li a:hover{
+  text-decoration: underline;
+
 }
 
 /*```````````````````````````INTRO```````````````````````````````*/
@@ -96,7 +129,6 @@ nav ul{
 .social-media{
     display: flex;
     gap: 2rem;
-
 }
 
 .intro .social-media{
@@ -106,6 +138,11 @@ nav ul{
 .social-media img{
     height: 2rem;
     cursor: pointer;
+}
+
+.social-media img:hover{
+   scale: 1.25;
+   filter: invert(85%) sepia(22%) saturate(0%) hue-rotate(215deg) brightness(93%) contrast(67%);
 }
 
 /*````````````````````````ABOUT MEE````````````````````````````*/
@@ -277,7 +314,7 @@ nav ul{
 }
 
 .my-img img{
-    width: 70vw;
+    height: 40vh;
 }
 
 .intro-text{
@@ -289,8 +326,12 @@ nav ul{
     font-size: 1.3rem;
 }
 
+.btns{
+    align-items: center;
+}
+
 .btns div{
-    width: 100%;
+    width: 75%;
 }
 
 
