@@ -65,7 +65,7 @@ nav ul li a{
     text-decoration: none;
     color: black;
     font-weight: 700;
-    animation: grad-move 0.5s linear infinite;
+    animation: grad-move 1s linear infinite;
     background: linear-gradient(to right, black, var(--gray), var(--light-gray), black);
     background-size: 200%;
     -webkit-background-clip: text;
@@ -135,15 +135,51 @@ nav ul li:hover{
     padding-top: 10vh;
 }
 
-.social-media img{
+.smedia-icon {
     height: 2rem;
     cursor: pointer;
 }
 
-.social-media img:hover{
+.smedia-icon:hover{
    scale: 1.25;
    filter: invert(85%) sepia(22%) saturate(0%) hue-rotate(215deg) brightness(93%) contrast(67%);
 }
+ 
+/*````````````````````````DROPDOWN````````````````````````````*/
+.dropdown {
+    display: flex;
+    font-size: 1.2rem;
+    font-weight: 500;
+    align-items: center;
+    gap: 0.2rem;
+    justify-content: center;
+   background-color: white;
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    position: absolute;
+     display: none;
+}
+
+.dropdown img{
+    height: 1.5rem;
+}
+
+.linkedin{
+    color: #006db0;
+}
+
+.snap{
+    color: #e3df03 ;
+}
+
+.insta{
+color: #d62976;
+}
+
+.mail{
+    color: #BB001B;
+}
+
 
 /*````````````````````````ABOUT MEE````````````````````````````*/
 
@@ -170,16 +206,12 @@ nav ul li:hover{
     cursor: pointer;
 }
 
-  .abt-heading:hover {
-    scale: 1.1;
-  }
-
 .abt-text{
     width: 50%;
     text-align: right;
     visibility: hidden;
     opacity: 0;
-    transition: visibility 0s, opacity 5s linear;
+    transition: visibility 0s, opacity 2s linear;
 
 }
 
@@ -218,6 +250,25 @@ nav ul li:hover{
     box-shadow: 0.4em 0.4em .4em  rgba(0, 0, 0, 0.253), -0.3em 0 .4em rgba(0, 0, 0, 0.2);
     display: flex;
     flex-direction: column;
+    z-index: 5;
+}
+
+.project .proj-img{
+    position: relative;
+}
+
+.project:hover{
+    font-weight: 500;
+    scale: 1.1;
+}
+
+.project-lightbox{
+    background-color: rgb(0, 0, 0, 0.50);
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    border-radius: 1rem 1rem 0 0;
 }
 
 .project img{
@@ -235,7 +286,6 @@ nav ul li:hover{
     align-items: center;
     text-align: left;
     padding: 1rem;
-    width: 100%;
 }
 
 .proj-desc a{
@@ -247,6 +297,10 @@ nav ul li:hover{
 .proj-desc a img{
     height: 2rem;
     cursor: pointer;
+}
+
+.proj-desc a:hover{
+    color: gray;
 }
  /*`````````````````FOOTER````````````````````````*/
 
@@ -261,6 +315,16 @@ nav ul li:hover{
  .foot-heading{
     font-family: var(--serif-display);
     font-size: 2.5rem;
+    animation: grad-move 1s linear infinite;
+    background: linear-gradient(to right, black, var(--gray), var(--light-gray), black);
+    background-size: 200%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    white-space: nowrap;
+ }
+
+ footer .dropdown{
+    background-color: var(--bg-color);
  }
 
  /*`````````````````````TABLET DESIGN````````````````````````````*/

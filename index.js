@@ -1,3 +1,4 @@
+/*``````````````````````````DYNAMIC SHADOW```````````````````````````````*/
 const intro = document.querySelector('.intro');
 const myName = intro.querySelector('.my-name');
 const prof = intro.querySelector('.profession');
@@ -22,9 +23,9 @@ function shadow(e) {
 
 intro.addEventListener('mousemove', shadow);
 
-/*````````````````````````````````````````````````````````````````````````` */
+/*````````````````````````ABOUT TEXT ANIMATION```````````````````````````` */
 
-function debounce(func, wait = 30, immediate = true) {
+function debounce(func, wait = 20, immediate = true) {
     var timeout;
     return function() {
       var context = this, args = arguments;
@@ -45,7 +46,7 @@ function debounce(func, wait = 30, immediate = true) {
   function slideText() {
       const slideInAt = (window.scrollY + window.innerHeight) - aboutDiv.clientHeight / 1.5;
       
-      // bottom of the image
+      // bottom of the text
       const textBottom = aboutDiv.offsetTop + aboutDiv.clientHeight;
       const isHalfShown = slideInAt > aboutDiv.offsetTop;
       const isNotScrolledPast = window.scrollY < textBottom;
@@ -57,3 +58,46 @@ function debounce(func, wait = 30, immediate = true) {
   }
 
   window.addEventListener('scroll', debounce(slideText));
+
+  /*`````````````````````````DROPDOWN```````````````````````````````` */
+
+ const smediaIcons = [...document.querySelectorAll('.smedia-icon')] ;
+ const smediaSection = document.querySelectorAll('.social-media') ;
+
+smediaIcons.forEach(icon =>{
+  icon.addEventListener('mouseover',(e)=>{
+    const target = e.target;
+    target.nextElementSibling.style.display = 'flex'; 
+  })
+});
+
+smediaIcons.forEach(icon =>{
+  icon.addEventListener('mouseout',(e)=>{
+    const target = e.target;
+    target.nextElementSibling.style.display = 'none'; 
+  })
+});
+
+/*``````````````````````PROJECT LIGHTBOX````````````````````````````` */
+
+const projects = [...document.querySelectorAll('.project')];
+
+projects.forEach(project =>{
+  project.addEventListener('mouseover',(e)=>{
+    const target = e.target.closest('.project');
+    const targetLightbox = target.querySelector('.project-lightbox');
+
+     targetLightbox.style.position = 'absolute';
+  })
+});
+
+projects.forEach(project =>{
+  project.addEventListener('mouseout',(e)=>{
+    const target = e.target.closest('.project');
+    const targetLightbox = target.querySelector('.project-lightbox');
+
+     targetLightbox.style.position = 'static';
+  })
+});
+
+
